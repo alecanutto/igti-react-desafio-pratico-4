@@ -1,8 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { ThemeProvider } from 'styled-components';
+import { darkTheme } from '../app/themes';
+import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
